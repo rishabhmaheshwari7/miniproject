@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head style="font-family: 'Montserrat', sans-serif;">
+  <title>login</title>
+  <link rel = "icon" href =  "icon.png" type = "image/x-icon">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+
+  <script >
+    function VALIDATION()                
+{ 
+        var name = document.forms["RegForm"]["name"];      
+        var email = document.forms["RegForm"]["email"]; 
+        var phone = document.forms["RegForm"]["telephone"]; 
+        var what = document.forms["RegForm"]["subject"]; 
+        var password = document.forms["RegForm"]["password"]; 
+        var address = document.forms["RegForm"]["address"]; 
+
+        var str = password.value;
+        var patt1 = /[a-z]/g;
+        var patt2 =/[A-Z]/g;
+        var patt3 =/[0-9]/g;
+        var patt4 =/[!@#$%^&*()]/g;
+        var result1 = str.match(patt1);
+        var result2 = str.match(patt2);
+        var result3 = str.match(patt3);
+        var result4 = str.match(patt4);
+
+  if (email.value == "")                 
+  { 
+    window.alert("Please enter a valid e-mail address."); 
+    email.focus(); 
+    return false; 
+  } 
+  if (email.value.indexOf("@", 0) < 0)  
+  {       
+
+    window.alert("Please enter a valid e-mail address."); 
+    email.focus(); 
+    return false; 
+  } 
+//string.indexOf(searchvalue, start)
+  if (email.value.indexOf(".", 0) < 0)         
+  { 
+    window.alert("Please enter a valid e-mail address."); 
+    email.focus(); 
+    return false; 
+  } 
+  if (password.value == "")          
+  { 
+    window.alert("Please enter your password"); 
+    password.focus(); 
+    return false; 
+  } 
+  
+  if (password.value.length< 6)
+  {  
+    window.alert("Password must be at least 6 characters long.");  
+    password.focus();
+    return false;  
+  }
+
+  if (result1==null) 
+  {
+    window.alert("use atleast one a-z");
+    password.focus();
+    return false;
+  }
+  
+  if (result2==null) 
+  {
+    window.alert("use atleast one A-Z");
+    password.focus();
+    return false;
+  }
+  
+  if (result3==null) 
+  {
+    window.alert("use atleast one number");
+    password.focus();
+    return false;
+  }
+  
+  if (result4==null) 
+  {
+    window.alert("use atleast one special characters");
+    password.focus();
+    return false;
+  }
+  
+  return true;
+}
+  </script>
+
+  <style> 
+  body 
+  {
+  background-color: rgb(26, 26, 26);
+  font-family: 'Montserrat', sans-serif;
+  }
+
+  form 
+  {                     
+    margin: 0 auto; 
+    width: auto; 
+    background-color:white;
+    color: black;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+
+  }
+
+  input[type=text] 
+  {
+    width: 100%;
+    padding: 10px 10px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid black;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+    border-radius: 5px;
+    font-size: 20px;
+    box-shadow: 0 5px 5px 0 rgba(0,0,0,0.5);
+    background-color: rgb(204, 204, 204);
+  }
+
+  input[type=text]:focus 
+  {
+    border: 3px solid blue;
+    background-color: rgb(159, 255, 128);
+  }
+
+  input[type=password]:focus 
+  {
+    border: 3px solid blue;
+    background-color: rgb(159, 255, 128);
+  }
+
+input[type=number]:focus 
+  {
+    border: 3px green;
+    background-color: rgb(159, 255, 128);
+  }
+
+select[type=text]:focus 
+  {
+    border: 3px green;
+    background-color: rgb(159, 255, 128);
+  }
+
+input[type=number] 
+  {
+    width: 100%;
+    padding: 10px 10px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid black;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+    border-radius: 5px;
+    font-size: 20px;
+    box-shadow: 0 5px 5px 0 rgba(0,0,0,0.5);
+    background-color: rgb(204, 204, 204);
+  }
+
+input[type=submit] 
+  {
+    width: 40%;
+    padding: 10px 5px;
+    margin: 8px 0;
+    border:none;
+    background-color:#2e9cca; 
+    outline: none;
+    border-radius: 5px;
+    font-size:20px;
+    box-shadow: 0 5px 5px 0 rgba(0,0,0,0.7);
+  }
+
+input[type=submit]:hover
+  {
+    background-color: rgb(102, 255, 102);
+  }
+
+input[type=reset]:hover
+  {
+    background-color: red;
+  }
+
+input[type=reset] 
+  {
+    width: 40%;
+    padding: 10px 5px;
+    margin: 8px 0;
+    border:none;
+    background-color: rgb(255, 77, 77); 
+    outline: none;
+    border-radius: 5px;
+    font-size:20px;
+    box-shadow: 0 5px 5px 0 rgba(0,0,0,0.5);
+  }
+
+input[type=password] 
+  {
+    width: 100%;
+    padding: 10px 10px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid black;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+    border-radius: 5px;
+    font-size: 20px;
+    box-shadow: 0 5px 5px 0 rgba(0,0,0,0.5);
+    background-color: rgb(204, 204, 204);
+  }
+
+select[type="text"]
+  {
+    width: 100%;
+    padding: 20px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid black;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+    border-radius: 5px;
+    box-shadow: 0 5px 5px 0 rgba(0,0,0,0.5);
+    background-color: rgb(204, 204, 204);
+  }
+
+</style>
+</head>
+<body background="8.jpg" style="font-family: 'Montserrat', sans-serif;">
+
+<div style="padding-top: 150px;font-family: 'Montserrat', sans-serif;">  
+<form name="RegForm" action="logincheck.php" onsubmit="return VALIDATION()" method="post" style="border-width: 20px;border: none;padding: 30px;border-radius:8px; width: 400px;height: auto;background-color: rgba(150,150,150,0.5); "> 
+  <div style="background-color: #29648a;padding: 20px;border-radius: 8px;box-shadow: 0 10px 20px 0 rgba(0,0,0,0.8);
+  transition: 0.6s;"> 
+  <h3 style="font-family:Arial;text-align: center;">LOGIN                   <img src="3.png" width="30px" height="30px"> </h3>
+    
+  <p align="center"><input type="text" name="email" placeholder="E-mail"> </p> 
+  <p align="center"><input type="password" name="password" placeholder=" Enter Password"> </p> 
+    
+  <p align="center"><input type="submit" value="submit" name="submit">   
+    <input type="reset" value="Reset" name="Reset"> 
+  </p>
+       
+  </div>
+</form>
+</div> 
+</body>
+</html>

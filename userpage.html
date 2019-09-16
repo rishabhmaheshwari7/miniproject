@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>user</title>
+ <link rel = "icon" href =  "icon.png" type = "image/x-icon">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+/* Style the header */
+.header {
+  background-color: transparent;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Style the top navigation bar */
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+  text-align: right;
+}
+
+/* Style the topnav links */
+.topnav a {
+  float: right;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change color on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+
+/* Create three unequal columns that floats next to each other */
+.column {
+  float: left;
+  padding: 10px;
+}
+
+
+/* Left and right column */
+.column.side {
+  width: 35%;
+  background-color: powderblue;
+}
+
+/* Middle column */
+.column.middle {
+  width: 30%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column.side, .column.middle {
+    width: 100%;
+  }
+}
+
+/* Style the footer */
+.footer {
+  background-color:lightgreen;
+  padding: 10px;
+  text-align: center;
+}
+
+.card {
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.5);
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
+  border-radius: 30px;
+}
+
+input[type=submit] 
+  {
+    width: 40%;
+    padding: 10px 5px;
+    margin: 8px 0;
+    border:none;
+    background-color:dodgerblue; 
+    outline: none;
+    border-radius: 20px;
+    font-size:20px;
+    box-shadow: 0 5px 5px 0 rgba(0,0,0,0.7);
+  }
+
+input[type=submit]:hover
+  {
+    background-color: rgb(57, 230, 0);
+  }
+
+</style>
+</head>
+<body>
+
+    <div class="header">
+      <h1>WELCOME<img src="2.png" width="30px" height="30px"></h1>
+    </div>
+
+    <div class="topnav">
+      <a href="#">Link</a>
+      <a href="#">Link</a>
+      <a href="frontpage.html">Logout</a>
+      
+    </div>
+
+    <div class="row">
+      <div class="column side">
+        <h2 style="text-align: center;">SUBMIT YOUR ASSIGNMENT</h2>
+        <div class="card">
+             <textarea cols="57" rows="50" name="Comment"></textarea> 
+             <input type="SUBMIT" name="SUBMIT">
+        </div>
+      </div>
+      
+      <div class="column middle">
+        <h2>QUESTIONS FOR TODAY</h2>
+         <div class="card">
+             <p>
+               <?php
+                include 'CONNECTDB.php';
+                $sql="select *from student";
+                $result=mysqli_query($conn,$sql);
+                if(mysqli_num_rows($result)>0)
+                {
+                  //output data of each row
+                  while ($row = mysqli_fetch_assoc($result)) 
+                  {
+
+                    echo "<br>";
+                    echo "<b>password</b> ".$row["pwd"]." <b>name:</b> " . $row["name"]."<b> email: </b>".$row["email"] ;
+                        
+                  }
+                }
+                else
+                {
+                  echo "table is empty";
+                }
+                mysqli_close($conn);
+                ?>
+             </p>
+        </div>
+        <br>
+        <div class="card">
+            <p>Q2-Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis</p>
+       
+        </div>
+        <br>
+        <div class="card">
+           <p>Q3-Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis</p>
+        
+        </div>
+      
+      </div>
+      
+      <div class="column side">
+        <h2>FACT FOR THE DAY</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis</p>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p>Footer</p>
+    </div>
+  
+</body>
+</html>

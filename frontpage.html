@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PORTAL-ASSIGNMENT</title> 
+  <link rel = "icon" href =  "icon.png" type = "image/x-icon">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+<style>
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: black;
+  margin: 0;
+}
+
+/* Float four columns side by side */
+.column {
+  font-family: 'Montserrat', sans-serif;
+  float: left;
+  width: 25%;
+  padding: 0 10px;
+}
+
+/* Remove extra left and right margins, due to padding */
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+/* Style the counter cards */
+.card {
+  font-family: 'Montserrat', sans-serif;
+  box-shadow: 0 10px 12px 0 rgba(0, 0, 0, 0.5);
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
+  border-radius: 20px;
+}
+
+.card:hover{
+  font-family: 'Montserrat', sans-serif;
+  background-color: rgba(255, 255, 51,0.88);
+  box-shadow: 0 10px 12px 0 rgba(0, 0, 0, 0.7);
+  padding: 20px;
+}
+
+</style>
+
+</head>
+<header style="box-shadow: 20px 20px 50px 40px rgba(0.6,0.7,0.7,0.6);font-size: 30px;">
+  <h1  style="background-color: transparent;text-align: center;padding: 40px;font-family: 'Montserrat', sans-serif;;color: #aaabb8">ASSIGNMENT PORTAL</h1>
+</header>
+<body background="b12.jpg" style="background-repeat: no-repeat;">
+      <div class="row" style="padding-left: 450px;padding-top:100px;">
+            <a href="login.html">
+            <div class="column">
+              <div class="card">
+                <h1 style="font-family: 'Montserrat', sans-serif;">LOGIN</h1>
+              </div>
+            </div>
+            </a>
+
+            <a href="register.html">
+            <div class="column">
+              <div class="card">
+                <h1 style="font-family: 'Montserrat', sans-serif;">SIGNUP</h1>
+              </div>
+            </div>
+            </a>
+      </div>
+</body>
+</html>
