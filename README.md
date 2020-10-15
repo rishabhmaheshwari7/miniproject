@@ -1,2 +1,2 @@
 # miniproject
-This is a project that helps students to view and submit assignments and teachers to upload assignments.
+This is a Simple yet Powerful program that helps students to view and submit assignments to their teacher while allowing the teachers to upload assignments for their students.
